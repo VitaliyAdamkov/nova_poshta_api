@@ -3,6 +3,8 @@ require 'active_support'
 require 'novaposhta/version'
 require 'novaposhta/base'
 require 'novaposhta/address'
+require 'uri'
+require 'net/http'
 
 module Novaposhta
   def self.configure
