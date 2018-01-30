@@ -5,12 +5,12 @@ require 'novaposhta/version'
 Gem::Specification.new do |spec|
   spec.name          = 'novaposhta'
   spec.version       = Novaposhta::VERSION
-  spec.authors       = ['woodcrust']
-  spec.email         = ['emptystamp@gmail.com']
+  spec.authors       = ['woodcrust', 'VitaliyAdamkov']
+  spec.email         = ['emptystamp@gmail.com', 'adamkov@tex.ua']
 
   spec.summary       = 'This is gem nova poshta (Новая почта, Нова пошта)'
   spec.description   = 'Gem API NOVA POSHTA(Новая почта, Нова пошта) for all ruby projects'
-  spec.homepage      = 'https://github.com/woodcrust/novaposhta'
+  spec.homepage      = 'https://github.com/VitaliyAdamkov/novaposhta'
   spec.license       = 'MIT'
 
   spec.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

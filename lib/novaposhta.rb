@@ -2,7 +2,7 @@ require 'json'
 require 'active_support'
 require 'novaposhta/version'
 require 'novaposhta/base'
-require 'novaposhta/address'
+require 'novaposhta/api'
 require 'uri'
 require 'net/http'
 

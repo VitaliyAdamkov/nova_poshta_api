@@ -1,15 +1,15 @@
 # Novaposhta
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/novaposhta`. To experiment with that code, run `bin/console` for an interactive prompt.
+One more ruby-client to Nova Poshta API 2.0
 
-TODO: Delete this and the text above, and describe your gem
+https://my.novaposhta.ua/data/instruction_JSON_ver.2.0.pdf
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'novaposhta'
+gem 'novaposhta', git: 'https://github.com/VitaliyAdamkov/novaposhta.git'
 ```
 
 And then execute:
@@ -31,29 +31,25 @@ end
 ```
 ## methods
 ```ruby
-# города
 Novaposhta::Address.get_cities # => hash
 
-# поиск города
 Novaposhta::Address.find_city(name) # => hash
 
-# населенные пункты
 Novaposhta::Address.get_settlements # => hash
 
-# области
 Novaposhta::Address.get_areas # => hash
 
-# отделения и типы компании
 Novaposhta::Address.get_warehouses # => hash
 
-# улицы
+Novaposhta::Address.get_warehouse_types # => hash
+
 Novaposhta::Address.get_street(city_ref) # => hash
 
-# поиск улицы
 Novaposhta::Address.find_street(city_ref, name) # => hash
+
+Novaposhta::Address.get_service_types # => hash
 ```
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
