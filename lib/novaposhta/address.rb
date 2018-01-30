@@ -1,43 +1,24 @@
 module Novaposhta
   class Address < Base
-    def self.get_cities
-      body_of_query = make_body('Address', 'getCities')
-      post_request(body_of_query)
-    end
+    AVAILABLE_API_CALLS = {
+      get_cities:           {model: 'Address', method: 'getCities'},
+      find_city:            {model: 'Address', method: 'getCities', args:   ['FindByString']},
+      get_settlements:      {model: 'AddressGeneral', method: 'getSettlements'},
+      get_areas:            {model: 'Address', method: 'getAreas'},
+      get_warehouses:       {model: 'Address', method: 'getWarehouses'},
+      get_warehouse_types:  {model: 'Address', method: 'getWarehouseTypes'},
+      get_street:           {model: 'Address', method: 'getStreet', args:   ['CityRef']},
+      find_street:          {model: 'Address', method: 'getStreet', args:   ['CityRef', 'FindByString']}
+    }
 
-    def self.find_city(name)
-      body_of_query = make_body('Address', 'getCities', {'FindByString' => name})
-      post_request(body_of_query)
-    end
+    def self.method_missing meth, *args
+      super unless AVAILABLE_API_CALLS.key?(meth)
 
-    # населенные пункты
-    def self.get_settlements
-      body_of_query = make_body('AddressGeneral', 'getSettlements', {})
-      post_request(body_of_query)
-    end
+      params = AVAILABLE_API_CALLS[meth]
+      arguments = (params[:args] || []).zip(args).to_h
 
-    # области
-    def self.get_areas
-      body_of_query = make_body('Address', 'getAreas', {})
-      post_request(body_of_query)
-    end
-
-    # отделения и типы компании
-    def self.get_warehouses
-      body_of_query = make_body('Address', 'getWarehouses', {})
-      post_request(body_of_query)
-    end
-
-    # улицы
-    def self.get_street(city_ref)
-      body_of_query = make_body('Address', 'getStreet', {'CityRef' => city_ref})
-      post_request(body_of_query)
-    end
-
-    # поиск улицы
-    def self.find_street(city_ref, name)
-      body_of_query = make_body('Address', 'getStreet', {'CityRef' => city_ref, 'FindByString' => name})
-      post_request(body_of_query)
+      body_of_query = make_body params[:model], params[:method], arguments
+      post_request body_of_query
     end
   end
 end
