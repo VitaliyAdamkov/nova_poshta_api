@@ -1,4 +1,4 @@
-# Novaposhta
+# NovaPoshtaApi
 
 One more ruby-client to Nova Poshta API 2.0
 
@@ -9,7 +9,7 @@ https://my.novaposhta.ua/data/instruction_JSON_ver.2.0.pdf
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'novaposhta', git: 'https://github.com/VitaliyAdamkov/novaposhta.git'
+gem 'nova_poshta_api', git: 'https://github.com/VitaliyAdamkov/nova_poshta_api.git'
 ```
 
 And then execute:
@@ -18,12 +18,12 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install novaposhta
+    $ gem install nova_poshta_api
 
 ## Usage
 ## config/aplication.rb
 ```ruby
-Novaposhta.configure do |config|
+NovaPoshtaApi.configure do |config|
   config.url     = 'https://api.novaposhta.ua/v2.0/{format}/'
   config.format  = :json # or :xml
   config.api_key = '...'
@@ -31,23 +31,23 @@ end
 ```
 ## methods
 ```ruby
-Novaposhta::Address.get_cities # => hash
+NovaPoshtaApi::Request.cities # => hash
 
-Novaposhta::Address.find_city(name) # => hash
+NovaPoshtaApi::Request.find_city(name) # => hash
 
-Novaposhta::Address.get_settlements # => hash
+NovaPoshtaApi::Request.settlements # => hash
 
-Novaposhta::Address.get_areas # => hash
+NovaPoshtaApi::Request.areas # => hash
 
-Novaposhta::Address.get_warehouses # => hash
+NovaPoshtaApi::Request.warehouses # => hash
 
-Novaposhta::Address.get_warehouse_types # => hash
+NovaPoshtaApi::Request.warehouse_types # => hash
 
-Novaposhta::Address.get_street(city_ref) # => hash
+NovaPoshtaApi::Request.street(city_ref) # => hash
 
-Novaposhta::Address.find_street(city_ref, name) # => hash
+NovaPoshtaApi::Request.find_street(city_ref, name) # => hash
 
-Novaposhta::Address.get_service_types # => hash
+NovaPoshtaApi::Request.service_types # => hash
 ```
 
 ## License

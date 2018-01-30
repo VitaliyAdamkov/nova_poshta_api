@@ -1,12 +1,12 @@
 require 'json'
 require 'active_support'
-require 'novaposhta/version'
-require 'novaposhta/base'
-require 'novaposhta/api'
+require 'nova_poshta_api/version'
+require 'nova_poshta_api/base'
+require 'nova_poshta_api/request'
 require 'uri'
 require 'net/http'
 
-module Novaposhta
+module NovaPoshtaApi
   def self.configure
     yield base_class
   end

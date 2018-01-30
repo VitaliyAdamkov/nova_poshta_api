@@ -1,4 +1,4 @@
-module Novaposhta
+module NovaPoshtaApi
   class Base
     def self.class_attr_accessor(*names)
       names.each do |name|

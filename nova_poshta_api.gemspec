@@ -1,23 +1,23 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'novaposhta/version'
+require 'nova_poshta_api/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'novaposhta'
-  spec.version       = Novaposhta::VERSION
+  spec.name          = 'nova_poshta_api'
+  spec.version       = NovaPoshtaApi::VERSION
   spec.authors       = ['woodcrust', 'VitaliyAdamkov']
   spec.email         = ['emptystamp@gmail.com', 'adamkov@tex.ua']
 
   spec.summary       = 'This is gem nova poshta (Новая почта, Нова пошта)'
   spec.description   = 'Gem API NOVA POSHTA(Новая почта, Нова пошта) for all ruby projects'
-  spec.homepage      = 'https://github.com/VitaliyAdamkov/novaposhta'
+  spec.homepage      = 'https://github.com/VitaliyAdamkov/nova_poshta_api'
   spec.license       = 'MIT'
 
   spec.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
 
   spec.files         = Dir['lib/**/*']
   spec.bindir        = 'bin'
-  spec.executables   = ['novaposhta']
+  spec.executables   = ['nova_poshta_api']
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency     'nokogiri', '>= 1.6.8.1', '< 1.9'
