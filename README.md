@@ -35,7 +35,7 @@ NovaPoshtaApi::Request.cities # => hash
 
 NovaPoshtaApi::Request.find_city(name) # => hash
 
-NovaPoshtaApi::Request.settlements # => hash
+NovaPoshtaApi::Request.settlements(page) # => hash
 
 NovaPoshtaApi::Request.areas # => hash
 
