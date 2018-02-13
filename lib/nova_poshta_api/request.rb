@@ -3,7 +3,7 @@ module NovaPoshtaApi
     AVAILABLE_API_CALLS = {
       cities:           {model: 'Address', method: 'getCities'},
       find_city:        {model: 'Address', method: 'getCities', args: ['FindByString']},
-      settlements:      {model: 'AddressGeneral', method: 'getSettlements'},
+      settlements:      {model: 'AddressGeneral', method: 'getSettlements', args: ['Page']},
       areas:            {model: 'Address', method: 'getAreas'},
       warehouses:       {model: 'Address', method: 'getWarehouses'},
       warehouse_types:  {model: 'Address', method: 'getWarehouseTypes'},
