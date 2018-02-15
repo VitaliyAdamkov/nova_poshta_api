@@ -9,7 +9,7 @@ https://my.novaposhta.ua/data/instruction_JSON_ver.2.0.pdf
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'nova_poshta_api', git: 'https://github.com/VitaliyAdamkov/nova_poshta_api.git'
+gem 'nova_poshta_api'
 ```
 
 And then execute:
