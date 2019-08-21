@@ -20,9 +20,9 @@ Gem::Specification.new do |spec|
   spec.executables   = ['nova_poshta_api']
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency     'nokogiri', '>= 1.6.8.1', '< 1.9'
+  spec.add_runtime_dependency     'nokogiri', '~> 1.10.4'
 
-  spec.add_development_dependency 'bundler', '>= 1.2', '< 1.17'
+  spec.add_development_dependency 'bundler', '>= 1.2', '< 3'
   spec.add_development_dependency 'rake', '>= 10.0', '< 13.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'byebug'

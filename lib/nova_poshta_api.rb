@@ -1,5 +1,4 @@
 require 'json'
-require 'active_support'
 require 'nova_poshta_api/version'
 require 'nova_poshta_api/base'
 require 'nova_poshta_api/request'
